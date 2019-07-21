@@ -1,0 +1,20 @@
+<%= form_with(model: post, local: true) do |form| %>
+ 
+  
+    <div class="col-lg-4 col-sm-12" >
+    <div class="field form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control",required: true %>
+    </div>
+  
+    <div class="field form-group">
+      <%= form.label :content %>
+      <%= form.text_field :content, class: "form-control" %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+  <% end %>
+  
