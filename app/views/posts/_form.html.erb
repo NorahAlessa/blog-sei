@@ -1,6 +1,5 @@
-<%= form_with(model: @post, local: true) do |form| %>
- 
-  
+
+  <%= form_for @post do |form| %>
     <div class="input-field col s6" >
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control",required: true %>
@@ -8,12 +7,13 @@
   
     <div class="input-field col s6">
       <%= form.label :content %>
-      <%= form.text_field :content, class: "form-control" %>
+      <%= form.text_area :content, class: "form-control" %>
     </div>
 
     <div class="input-field col s6">
     <%= form.label :img, 'Image' %>
     <%= form.text_field :img, class: "form-control" %>
+    <small> image as URL for now </small>
 </div>
   
   <%= form.submit "Submit", :class => "btn waves-effect waves-light" %>
