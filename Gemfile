@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 #######better error page for Rails and other Rack apps.########
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
+# gem 'better_errors', '~> 2.5', '>= 2.5.1'
 ##### bulma CSS #######
 gem "bulma-rails", "~> 0.7.5"
 ###### simple form ######
