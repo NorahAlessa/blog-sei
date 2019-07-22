@@ -1,11 +1,10 @@
-<%= simple_form_for([@post, @post.comments.build]) do |f| %>
-    <div class="col-lg-4 col-sm-12" >
-    <div class="field form-group">
+<%= simple_form_for @post.comments do |f| %>
+    <div class="input-field col s6" >
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control",required: true %>
     </div>
   
-    <div class="field form-group">
+    <div class="input-field col s6" >
       <%= f.label :comment %>
       <%= f.text_field :comment, class: "form-control" %>
     </div>

@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
+#bootstrap gem
 gem 'bootstrap', '~> 4.3.1'
+#devise gem
 gem "devise"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -35,13 +37,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-#######better error page for Rails and other Rack apps.########
-# gem 'better_errors', '~> 2.5', '>= 2.5.1'
+
 ##### bulma CSS #######
 gem "bulma-rails", "~> 0.7.5"
 ###### simple form ######
 gem 'simple_form', '~> 4.1'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

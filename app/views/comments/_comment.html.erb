@@ -1,15 +1,12 @@
-<div class="box">
-<article class="media">
-<div class="content">
-<div class="content">
+<div class="row">
+<div class="col-sm-6">
+    <div class="card">
 <p>
-<strong>
-<%= comment.name %>:</strong>
+<%= comment.name %>:
 <%= comment.comment %>
 </p>
 </div>
 </div>
 <%= link_to "Delete", post_path(@post),method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-outline-danger"%>
 
-</article>
 </div>
