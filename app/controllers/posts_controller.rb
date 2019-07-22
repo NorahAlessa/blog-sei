@@ -10,12 +10,14 @@ class PostsController < ApplicationController
 
      def create 
         @post=Post.new(post_params)
-
-        if @post.save
-            redirect_to @post
-        else
-            render 'new'
-            end
+        @post.user_id =current_user.id
+         @post.save
+         redirect_to posts_path
+        # if @post.save
+        # 
+        # else
+        #     render 'new'
+        #     end
      end
 
      def show 
@@ -24,6 +26,7 @@ class PostsController < ApplicationController
    
      def update
 @post =Post.find(params[:id])
+
 if @post.update(post_params)
     redirect_to @post
 else 
