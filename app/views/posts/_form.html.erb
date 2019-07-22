@@ -1,20 +1,22 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
  
   
-    <div class="col-lg-4 col-sm-12" >
-    <div class="field form-group">
+    <div class="input-field col s6" >
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control",required: true %>
     </div>
   
-    <div class="field form-group">
+    <div class="input-field col s6">
       <%= form.label :content %>
       <%= form.text_field :content, class: "form-control" %>
     </div>
+
+    <div class="input-field col s6">
+    <%= form.label :img, 'Image' %>
+    <%= form.text_field :img, class: "form-control" %>
+</div>
   
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  </div>
+  <%= form.submit "Submit", :class => "btn waves-effect waves-light" %>
+
   <% end %>
   

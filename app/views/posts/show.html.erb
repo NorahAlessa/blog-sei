@@ -4,9 +4,31 @@
 <div class="content">
 <%= @post.content %>
 </div>
-<div class="content">
+<div class="img">
 <%= @post.img %>
 </div>
+<div class="form-inline ">
+<p class="text-right"> 
+<%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-success" %>
+</p>
+<p class="text-right">
+<%= link_to "Delete", post_path(@post),method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-outline-danger"%>
+</p>
+</div>
+<hr/>
 
+</div>
+</section>
+<section class="section comments">
+<div class="container">
+<h2 class="subtitle is-4"><strong> 
+<%= @post.comments.count %>
+</strong>comments</h2>
+<%= render  @post.comments %>
+<div class="comment-form">
+<hr/>
+<h3 class="subtitle is-3">leave a comment </h3>
+<%= render 'comments/form' %>
+</div>
 </div>
 </section>
