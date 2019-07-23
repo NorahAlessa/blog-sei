@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2019_07_22_114505) do
     t.datetime "updated_at", null: false
     t.integer "post_id"
     t.bigint "user_id"
-    t.bigint "comment_id"
-    t.index ["comment_id"], name: "index_comments_on_comment_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -49,7 +47,6 @@ ActiveRecord::Schema.define(version: 2019_07_22_114505) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "comments"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
 end

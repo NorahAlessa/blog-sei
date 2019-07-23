@@ -19,15 +19,29 @@
 
 </div>
 </section>
-<section class="section comments">
-<div class="container">
-<h2 class="subtitle is-4"><strong> 
-<%= @post.comments.count %>
-</strong>comments</h2>
-<%= render  @post.comments %>
-<div class="comment-form">
-<hr/>
-<h3 class="subtitle is-3">leave a comment </h3>
-<%= render 'comments/form' %>
-</div>
-</div>
+
+<% if user_signed_in? %>
+<%if current_user.id == @post.user_id%>
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post) , method: :delete, data: {confirm:"Are you sure you want to delete"}%>
+<%end%>
+<%end%>
+
+    
+<h2>comments count</h2>
+<hr>
+<%= @post.comments.count%>
+<% @post.comments.each do |r| %> 
+<%= r.comment%>
+
+
+<% if user_signed_in? %>
+<%if current_user.id == r.user_id%>
+<%= link_to "Edit", edit_comment_path(r) %>
+<%= link_to "Delete", comment_path(r) , method: :delete, data: {confirm:"Are you sure you want to delete"}%>
+
+<%end%>
+<%end%>
+<%end%>
+<h2>leave comments</h2>
+<%= render 'comments/form'%> 
