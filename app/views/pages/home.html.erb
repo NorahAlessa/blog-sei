@@ -1,6 +1,5 @@
 <h2 align="center">Posts</h2>
-
-
+<br>
 <div class="card-deck" >
   <% @posts.each do |post|  %>
     <div class="col-6 col-sm-3 col-md-3 p-2">
@@ -13,7 +12,7 @@
                 <h6 class="card-title" style="size:10px;">posted by:<br/>
                 <%= post.user.email%>
             </h6>
-                <button class="btn btn-link"> 
+                <button  type="button" class="btn btn-link"> 
                  <%= link_to "More Info", post_path(post) %>
                 </button>
             </div>
