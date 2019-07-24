@@ -1,20 +1,27 @@
 <h2 align="center">Posts</h2>
 
-<% @posts.each do |post|  %>
-<div class="col-sm-4">
-   <div class="card">
-   
-     <div class="card-body">
-     
-       <h5 class="card-title"> <%=post.title%></h5>
-      
-   
-       <p class="card-text"><%= post.content%></p>
-          <%= link_to "More Info", post_path(post),class:"text-info" %>
 
-      </div>
+
+
+
+<div class="card-deck" >
+  <% @posts.each do |post|  %>
+    <div class="col-6 col-sm-3 col-md-3 p-2">
+        <div class="card border-primary">
+            <div class="card-body" style="text-align:center;">
+                
+
+               
+                 
+                <h5 class="card-text" style="text-align:center; font-weight:bold; "> <br>
+                    <%= post.title %>
+                </h5>
+                
+                <button class="btn btn-link"> 
+                 <%= link_to "More Details", post_path(post) %>
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
-<% end %>
-
-
+  <% end %>
+</div>
