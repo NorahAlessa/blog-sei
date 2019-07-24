@@ -1,8 +1,13 @@
 
 <div class="container">
+<h6 class="card-title" style="size:10px;">posted by:<br/>
+<%= @post.user.email%>
+</h6>
 <h1 class="title"> <%= @post.title %></h1>
-<div class="content">
 
+<div class="card-img-top"><%= image_tag(@post.img, size: "200x200", alt: "Post Image")%></div>
+<br/>
+<div class="content">
 <%= @post.content %>
 </div>
 
@@ -15,13 +20,13 @@
 <%end%>
 <hr>
 </div>
-</section>
 
 
 
+<div  style=" margin: 10px 5px 15px 20px;" >
     
-<h5><%= @post.comments.count%> comments </h5>
-<hr>
+<h4><%= @post.comments.count%> comments </h4>
+
 
 <% @post.comments.each do |r| %> 
 <%= r.comment%>
@@ -33,8 +38,10 @@
 <%= link_to "Delete", comment_path(r) , method: :delete,class:"text-danger", data: {confirm:"Are you sure you want to delete the post?"}%>
 <br>
 <%end%>
+<hr>
 <%end%>
 <%end%>
 <br/>
 <h2>leave a comment</h2>
 <%= render 'comments/form'%> 
+</div>
