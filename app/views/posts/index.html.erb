@@ -1,7 +1,5 @@
 <h1 class="title" align="center"> My Posts </h1> 
 
-
-
 <div class="card-deck" >
   <% @post.each do |post|  %>
     <div class="col-6 col-sm-3 col-md-3 p-2">
@@ -11,7 +9,6 @@
                 <h5 class="card-text" style="text-align:center; font-weight:bold; "> <br>
                 <%= link_to post.title, post  %>
                 </h5>
-                
                 
             </div>
         </div>

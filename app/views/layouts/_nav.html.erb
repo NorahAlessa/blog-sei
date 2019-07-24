@@ -1,40 +1,37 @@
 
-
-
-
 <nav class="navbar  sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
 
-<a class="navbar-brand" href="https://sei-blog.herokuapp.com/" >
-<img src="/assets/blog-logo.png" width="50" height="50" class="d-inline-block align-top" alt="blog logo">
+  <a class="navbar-brand" href="https://sei-blog.herokuapp.com/" >
+    <img src="/assets/blog-logo.png" width="50" height="50" class="d-inline-block align-top" alt="blog logo">
+  </a>
 
-</a>
-
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-  <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto">
       
-  <li class="nav-item ">
-  <%= link_to('my posts', posts_path, class: 'nav-item nav-link active') %>
-</li>
+      <li class="nav-item ">
+       <%= link_to('my posts', posts_path, class: 'nav-item nav-link active') %>
+      </li>
 
-    <li class="nav-item ">
-    <%= link_to('New post', new_post_path, class: 'nav-item nav-link active') %>
-  </li>
-  </ul>
+      <li class="nav-item ">
+        <%= link_to('New post', new_post_path, class: 'nav-item nav-link active') %>
+      </li>
+  
+    </ul>
    
 
-  <%if user_signed_in? %>
-  <button type="button">
-<%=link_to "Log Out", destroy_user_session_path,class: 'nav-item nav-link active', method: :delete%>
-</button>
-<%else %>
 
-<%=link_to "Log In", new_user_session_path,class: 'nav-item nav-link active  btn-outline-secondary'%>
+   <%if user_signed_in? %>
+     <button type="button">
+       <%=link_to "Log Out", destroy_user_session_path,class: 'nav-item nav-link active', method: :delete%>
+     </button>
+    <%else %>
 
- <%=link_to "Sign Up", new_user_registration_path,class: 'nav-item nav-link active  btn-outline-secondary'%>
-<%end %>
+   <%=link_to "Log In", new_user_session_path,class: 'nav-item nav-link active  btn-outline-secondary'%>
+     <%=link_to "Sign Up", new_user_registration_path,class: 'nav-item nav-link active  btn-outline-secondary'%>
+    <%end %>
 
 
   </div>
