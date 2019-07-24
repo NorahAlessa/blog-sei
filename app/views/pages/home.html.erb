@@ -1,16 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
+<h2 align="center">Posts</h2>
 
 <% @posts.each do |post|  %>
 <div class="col-sm-4">
    <div class="card">
+   
      <div class="card-body">
- 
+     
        <h5 class="card-title"> <%=post.title%></h5>
       
+   
        <p class="card-text"><%= post.content%></p>
-          <%= link_to "More Info", post_path(post) %>
+          <%= link_to "More Info", post_path(post),class:"text-info" %>
 
       </div>
     </div>

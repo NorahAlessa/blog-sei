@@ -1,12 +1,13 @@
 <%= form_for @comment do |form| %>
   <div class="input-field col s6" >
-  <%= form.label :comment %>
+ 
   <%= form.text_area :comment, class: "form-control",required: true %>
 </div>
 <%if @post%>
 <%= form.hidden_field :post_id, :value => @post.id%>
 <%end%>
-<div class="actions">
+<div class="actions " style=" margin: 10px 5px 15px 20px;" >
+
 <%= form.submit %>
 </div>
   <% end %>

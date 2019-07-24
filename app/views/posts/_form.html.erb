@@ -4,20 +4,22 @@
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control",required: true %>
     </div>
-  
+  <br/>
     <div class="input-field col s6">
       <%= form.label :content %>
       <%= form.text_area :content, class: "form-control" %>
     </div>
-
+<br/>
     <div class="input-field col s6">
     <%= form.label :img, 'Image' %>
     <%= form.text_field :img, class: "form-control" %>
     <small> image as URL for now </small>
 </div>
-  
-  <%= form.submit "Submit", :class => "btn waves-effect waves-light" %>
+<div style=" margin: 10px 5px 15px 20px;">
+<%= link_to 'Back', posts_path, :class => "btn btn-secondary" %>
+  <%= form.submit "Submit", :class => "btn btn-secondary" %>
 
   <% end %>
+  </div>
   </div>
   

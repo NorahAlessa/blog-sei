@@ -2,46 +2,39 @@
 <div class="container">
 <h1 class="title"> <%= @post.title %></h1>
 <div class="content">
+
 <%= @post.content %>
 </div>
 
 
-
-<div class="form-inline ">
-<p class="text-right"> 
-<%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-success" %>
-</p>
-<p class="text-right">
-<%= link_to "Delete", post_path(@post),method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-outline-danger ml-1"%>
-</p>
-</div>
-<hr/>
-
+<% if user_signed_in? %>
+<%if current_user.id == @post.user_id%>
+<%= link_to "Edit", edit_post_path(@post),class: "text-success" %>
+<%= link_to "Delete", post_path(@post),class:"text-danger" , method: :delete, data: {confirm:"Are you sure you want to delete"}%>
+<%end%>
+<%end%>
+<hr>
 </div>
 </section>
 
-<% if user_signed_in? %>
-<%if current_user.id == @post.user_id%>
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Delete", post_path(@post) , method: :delete, data: {confirm:"Are you sure you want to delete"}%>
-<%end%>
-<%end%>
+
 
     
-<h2>comments count</h2>
+<h5><%= @post.comments.count%> comments </h5>
 <hr>
-<%= @post.comments.count%>
+
 <% @post.comments.each do |r| %> 
 <%= r.comment%>
 
-
 <% if user_signed_in? %>
+<br>
 <%if current_user.id == r.user_id%>
-<%= link_to "Edit", edit_comment_path(r) %>
-<%= link_to "Delete", comment_path(r) , method: :delete, data: {confirm:"Are you sure you want to delete"}%>
-
+<%= link_to "Edit", edit_comment_path(r),class: "text-success" %>
+<%= link_to "Delete", comment_path(r) , method: :delete,class:"text-danger", data: {confirm:"Are you sure you want to delete the post?"}%>
+<br>
 <%end%>
 <%end%>
 <%end%>
-<h2>leave comments</h2>
+<br/>
+<h2>leave a comment</h2>
 <%= render 'comments/form'%> 

@@ -1,19 +1,17 @@
-<h1 class="title"> Blog Index </h1> 
-
-
-<div class="row">
+<h1 class="title" align="center"> My Posts </h1> 
 
 
 <% @post.each do |post| %>  
-  <div class="col-sm-4">
-   <div class="card">
+ 
+  <div class="card-columns">
+   <duv class="card">
+     <div class="card-img-top"><%= image_tag(post.img, size: "100x100", alt: "Post Image")%></div>
      <div class="card-body">
-       <h5 class="card-title"> <%= link_to post.title, post  %></h5>
-       <p class="card-text"><%= post.content %></p>
+       <h5 class="card-title"><%= link_to post.title, post  %></h5>
 
-      </div>
+       
+       </div>
     </div>
   </div>
-<% end %>
-</div>
+ <% end %>
 
